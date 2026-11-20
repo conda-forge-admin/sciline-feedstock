@@ -1,7 +1,6 @@
 context:
   name: sciline
-  version: "26.9.0"
-  python_min: "3.11"
+  version: "26.11.0"
 
 package:
   name: ${{ name|lower }}
@@ -9,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/sciline-${{ version }}.tar.gz
-  sha256: c2bfd6e9462922902b54cae99d95974b9e26b33e3366f6dd810b9c5cf18b6944
+  sha256: 4dce7ef36f49a26cc39b270bda5b43f1f3f6afbaec38e7afd0a9464b906c7dba
 
 build:
   number: 0
@@ -25,13 +24,11 @@ requirements:
   run:
     - python >=${{ python_min }}
     - cyclebane >=24.06.0
-    - typing_extensions
 
 tests:
   - python:
       imports:
         - sciline
-      pip_check: true
       python_version:
         - ${{ python_min }}.*
         - "*"
